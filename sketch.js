@@ -6,7 +6,7 @@
 /*   By: aben-azz <aben-azz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 20:40:48 by aben-azz          #+#    #+#             */
-/*   Updated: 2019/10/06 22:20:23 by aben-azz         ###   ########.fr       */
+/*   Updated: 2019/10/06 22:33:57 by aben-azz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ let	main = {
 	height: 0,
 	starsCount: 500,
 	speed: 15,
+	github: "https://raw.githubusercontent.com/aben-azz/19_invaders/master/"
 }
 
 let player = null;
@@ -36,10 +37,14 @@ let weapons = {
 }
 
 
+let getImage = src =>{
+	return loadImage(main.github + src + ".png")
+}
+
 let keys = [];
 function	preload(){
-	ships.simple = loadImage("https://raw.githubusercontent.com/aben-azz/19_invaders/master/simple.png")
-	ships.airplane = loadImage("https://raw.githubusercontent.com/aben-azz/19_invaders/master/airplane.png");
+	ships.simple = getImage("simple")
+	ships.airplane = getImage("airplane");
 }
 
 function setup(){
