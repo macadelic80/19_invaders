@@ -6,7 +6,7 @@
 /*   By: aben-azz <aben-azz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 20:40:48 by aben-azz          #+#    #+#             */
-/*   Updated: 2019/10/06 22:40:49 by tjuzen           ###   ########.fr       */
+/*   Updated: 2019/10/06 22:43:28 by tjuzen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,6 @@ function show_fps() {
 	let fps = frameRate();
 	fill(255);
 	stroke(0);
-	textSize(15);
-	text(fps.toFixed(2), 5, 13);
+	textSize(25);
+	text("FPS : " + fps.toFixed(2), 15, 30);
 }
