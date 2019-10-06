@@ -15,35 +15,34 @@ let	main = {
 	height: window.innerHeight,
 	starsCount: 500,
 	speed: 15,
-	github: "https://raw.githubusercontent.com/aben-azz/19_invaders/master/"
-}
+	github: "https://raw.githubusercontent.com/aben-azz/19_invaders/master/images/"
+};
 
 let player = null;
-
 
 let ships = {
 	simple: null,
 	airplane: null
-}
+};
 
 let bullets = {
 	simple: null,
 	airplane: null
-}
+};
 
 let weapons = {
 	simple: null,
 	airplane: null
-}
+};
 
 
 let getImage = src =>{
 	return loadImage(main.github + src + ".png")
-}
+};
 
 let keys = [];
 function	preload(){
-	ships.simple = getImage("simple")
+	ships.simple = getImage("simple");
 	ships.airplane = getImage("airplane");
 }
 
@@ -119,7 +118,7 @@ class Player {
 		this.displayName = _displayName;
 		this.controller = null;
 		this.ship = new Ship(_shipType);
-		this.position = [main.width / 2, main.height - 50]
+		this.position = [main.width / 2, main.height - 50];
 		this.speed = 35;
 	}
 	get getX(){
@@ -132,13 +131,15 @@ class Player {
 		this.position = xy;
 	}
 	displayShip(){
-		rectMode(CENTER)
-		stroke(255,0,0)
-		noFill()
+		rectMode(CENTER);
+		stroke(255,0,0);
+		noFill();
 		rect(...this.position,35,75);
 		this.ship.display(this.position);
 	}
 }
+
+
 
 function display_star() {
 	let x = random(-main.width / 2, main.width / 2);
@@ -156,14 +157,14 @@ function display_star() {
 	fill(0);
 	noStroke();
 
-	var sx = map(x / z, 0, 1, 0, main.width / 2);
-	var sy = map(y / z, 0, 1, 0, main.height / 2);
+	let sx = map(x / z, 0, 1, 0, main.width / 2);
+	let sy = map(y / z, 0, 1, 0, main.height / 2);
 
-	var r = map(z, 0, main.width / 2, 8, 0);
+	let r = map(z, 0, main.width / 2, 8, 0);
 	ellipse(sx, sy, r, r);
 
-	var px = map(x / pz, 0, 1, 0, main.width / 2);
-	var py = map(y / pz, 0, 1, 0, main.height / 2);
+	let px = map(x / pz, 0, 1, 0, main.width / 2);
+	let py = map(y / pz, 0, 1, 0, main.height / 2);
 
 	pz = z;
 	stroke(100);
