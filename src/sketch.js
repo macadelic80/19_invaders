@@ -6,13 +6,13 @@
 /*   By: aben-azz <aben-azz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 20:40:48 by aben-azz          #+#    #+#             */
-/*   Updated: 2019/10/06 22:33:57 by aben-azz         ###   ########.fr       */
+/*   Updated: 2019/10/06 22:40:49 by tjuzen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 let	main = {
-	width: 0,
-	height: 0,
+	width: window.innerWidth,
+	height: window.innerHeight,
 	starsCount: 500,
 	speed: 15,
 	github: "https://raw.githubusercontent.com/aben-azz/19_invaders/master/"
@@ -48,9 +48,7 @@ function	preload(){
 }
 
 function setup(){
-	main.width = 1920;
-	main.height = 1080;
-	createCanvas(1920, 1080);
+	createCanvas(main.width-20, main.height-20);
 	frameRate(30);
 	player = new Player("abenazz", "airplane");
 }
