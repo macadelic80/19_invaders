@@ -6,7 +6,7 @@
 /*   By: aben-azz <aben-azz@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 20:40:48 by aben-azz          #+#    #+#             */
-/*   Updated: 2019/10/06 22:00:32 by aben-azz         ###   ########.fr       */
+/*   Updated: 2019/10/06 22:20:23 by aben-azz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,21 @@ let ships = {
 	airplane: null
 }
 
+let bullets = {
+	simple: null,
+	airplane: null
+}
+
+let weapons = {
+	simple: null,
+	airplane: null
+}
+
+
 let keys = [];
 function	preload(){
-	ships.simple = loadImage("simple.png")
-	ships.airplane = loadImage("airplane.png");
+	ships.simple = loadImage("https://raw.githubusercontent.com/aben-azz/19_invaders/master/simple.png")
+	ships.airplane = loadImage("https://raw.githubusercontent.com/aben-azz/19_invaders/master/airplane.png");
 }
 
 function setup(){
@@ -36,7 +47,7 @@ function setup(){
 	main.height = 1080;
 	createCanvas(1920, 1080);
 	frameRate(30);
-		player = new Player("abenazz", "airplane");
+	player = new Player("abenazz", "airplane");
 }
 
 
@@ -72,11 +83,17 @@ function handle_keys(){
 
 
 class Weapon {
-	constructor(_imageWeapon, _imageAmmo){
-		this.imageWeapon = _imageWeapon;
-		this.imageAmmo = _imageAmmo;
+	constructor(_imageType, _imageAmmo){
+		this.imageWeapon = weapons[_imageWeapon];
+		this.ammo = new Bullet(_bulletType);
 
 	}
+}
+
+class Bullet {
+		constructor(_bulletType){
+
+		}
 }
 
 class Ship {
@@ -100,7 +117,7 @@ class Player {
 		this.controller = null;
 		this.ship = new Ship(_shipType);
 		this.position = [main.width / 2, main.height - 50]
-		this.speed = 10;
+		this.speed = 35;
 	}
 	get getX(){
 		return this.position[0];
