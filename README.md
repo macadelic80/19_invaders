@@ -1,4 +1,7 @@
 # 19_invaders
 
-aben-azz
-tjuzen
+Creating a space invaders in p5.js
+
+Just clone the repository and launch the index.html in your favourite browser.
+
+done by aben-azz && tjuzen
