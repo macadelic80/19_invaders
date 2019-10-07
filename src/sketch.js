@@ -13,6 +13,7 @@
 function	preload(){
 	ships.simple = getImage("simple");
 	ships.airplane = getImage("airplane");
+	ships.enemy1 = getImage("enemy1");
 }
 
 let player;
@@ -27,9 +28,14 @@ let menu = {
 	options: null
 };
 
+let enemies = [];
+
 function setup(){
 	createCanvas(main.width-20, main.height-20);
-	player = new Player("abenazz", "airplane")
+	player = new Player("abenazz", "airplane");
+    for (let i = 0; i < 5; i++){
+        enemies[i] = new Enemy("enemy1", [100 + (main.width / 5) * (i), 130])
+    }
 	//console.log(getSizeText(50, "Menu"));
 }
 
@@ -80,6 +86,7 @@ function draw(){
 		display_score();
 		handle_keys_ingame();
 		player.displayShip();
+		enemies.forEach(x=>x.displayShip());
 		set_background();
 	} else if (main.index === 2){
 		;//options
