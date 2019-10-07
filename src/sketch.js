@@ -79,8 +79,7 @@ function draw(){
 		menu.start.display();
 		menu.customize.display();
 		menu.options.display();
-	} else if (menu.index === 1)
-	{
+	} else if (menu.index === 1){
 		frameRate(30);
 		show_fps();
 		display_score();
