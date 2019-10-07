@@ -13,7 +13,7 @@
 function	preload(){
 	ships.simple = getImage("simple");
 	ships.airplane = getImage("airplane");
-	ships.enemy1 = getImage("enemy1");
+	ships.enemy1 = getImage("enemy");
 }
 
 let player;
