@@ -13,7 +13,7 @@ let	main = {
 	github: "https://raw.githubusercontent.com/aben-azz/19_invaders/master/images/"
 };
 
-let player = null;
+
 
 let ships = {
 	simple: null,
